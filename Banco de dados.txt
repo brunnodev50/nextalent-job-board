@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS nextalent;
+USE nextalent;
+
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    email VARCHAR(255) UNIQUE,
+    senha VARCHAR(255),
+    foto VARCHAR(255) DEFAULT NULL,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE vagas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255),
+    localizacao VARCHAR(100),
+    tipo VARCHAR(50),
+    tags VARCHAR(255),
+    status VARCHAR(20) DEFAULT 'aberta',
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE candidaturas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    vaga_titulo VARCHAR(255),
+    candidato_nome VARCHAR(255),
+    candidato_email VARCHAR(255),
+    linkedin VARCHAR(255),
+    arquivo_path VARCHAR(255),
+    status VARCHAR(50) DEFAULT 'Recebido',
+    data_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Cria Usuário Admin (Senha: 123456)
+INSERT INTO usuarios (nome, email, senha) VALUES 
+('Admin', 'admin@nextalent.com', '$2y$10$8K1p/a.b.c.d.e.f.g.h.u.O/G/y/z/A/B/C/D/E/F/G');
