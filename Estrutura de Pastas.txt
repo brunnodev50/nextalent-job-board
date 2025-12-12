@@ -1,0 +1,10 @@
+📂 Estrutura de Pastas
+/
+├── admin/              # Área restrita (Painel, Login, Perfil)
+├── api/                # Endpoints PHP para o Frontend (JSON)
+├── documentos/         # Armazenamento de PDFs (Criado automaticamente)
+├── foto-perfil/        # Armazenamento de Avatares (Criado automaticamente)
+├── config.php          # Conexão com Banco de Dados
+├── index.php           # Página Principal (Vagas)
+├── script.js           # Lógica Frontend
+└── style.css           # Estilos Globais
